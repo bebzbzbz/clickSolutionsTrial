@@ -2,7 +2,7 @@
 :root {
     --filter: #696969;
     --accordion: #eee;
-    --border: 1px solid #b8b8b8;
+    --border: #b8b8b8;
     --accent: rgb(48, 48, 255);
 }
 * {
@@ -51,9 +51,6 @@ label {
 }
 
 /* ? =============== CLASSES =============== */
-.hide {
-    display: none;
-}
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -75,7 +72,7 @@ button {
     padding: .7rem 1rem;
     width: 100px;
     text-align: left;
-    border: var(--border);
+    border: 1px solid var(--border);
     border-radius: 0;
     background-color: transparent;
     transition: box-shadow .3s ease;
@@ -87,16 +84,26 @@ button:hover {
 /* * =============== PANEL ================ */
 #panel {
     width: 100%;
-    border: var(--border);
-    padding: 1.5rem 1.7rem 0;
+    border: 1px solid #fff;
+    padding-inline: 1.7rem;
     flex-direction: column;
     gap: 1.5rem;
-    transition: height 2s ease;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out, border .3s ease-in-out;
+}
+#panel.isOpen {
+    max-height: 1000px;
+    border: 1px solid var(--border)
 }
 
 .panel-title {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+#toolbar {
+    padding-top: 1.5rem;
 }
 
 #search {

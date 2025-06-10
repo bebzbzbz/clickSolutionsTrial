@@ -1,8 +1,7 @@
 const panel = document.getElementById("panel")
 
 function togglePanel() {
-    panel.classList.toggle("hide")
-    panel.classList.toggle("flex-col")
+    panel.classList.toggle("isOpen")
 }
 
 document.getElementById("button").addEventListener("click", togglePanel)
