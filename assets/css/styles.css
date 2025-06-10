@@ -1,0 +1,159 @@
+/* * ============== GLOBAL + SHARED =============== */
+:root {
+    --filter: #696969;
+    --accordion: #eee;
+    --border: 1px solid #b8b8b8;
+    --accent: rgb(48, 48, 255);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 10px;
+}
+a, button, .accordion-wrapper p {
+    cursor: pointer;
+}
+a {
+    color: var(--accent);
+    transition: color .2s ease;
+}
+a:hover {
+    color: #000;
+}
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 9px;
+}
+main {
+    width: 300px;
+    align-items: end;
+    padding: 2rem;
+    gap: 1rem;
+}
+main, input, button {
+    font-size: 1.2rem;
+}
+input {
+    accent-color: var(--accent);
+}
+#button-wrapper, #search-wrapper, #search, .accordion-wrapper {
+    position: relative;
+}
+label {
+    width: 100%;
+}
+
+/* ? =============== CLASSES =============== */
+.hide {
+    display: none;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flip {
+    rotate: 180deg;
+}
+
+/* ? =============== BUTTON ================ */
+#button-wrapper svg {
+    z-index: -1;
+}
+button {
+    padding: .7rem 1rem;
+    width: 100px;
+    text-align: left;
+    border: var(--border);
+    border-radius: 0;
+    background-color: transparent;
+    transition: box-shadow .3s ease;
+}
+button:hover {
+    box-shadow: var(--filter) 0px 0px 7px;
+}
+
+/* * =============== PANEL ================ */
+#panel {
+    width: 100%;
+    border: var(--border);
+    padding: 1.5rem 1.7rem 0;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: height 2s ease;
+}
+
+.panel-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#search {
+    padding: .7rem 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+/* * =============== ACCORDIONS ================ */
+#accordion-area {
+    gap: 1.3rem;
+}
+.arrow {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: rotate .7s ease;
+}
+
+.accordion-wrapper p {
+    color: var(--filter);
+    padding-bottom: 1rem;
+    transition: color .3s ease;
+}
+.accordion-wrapper:not(:last-child) p {
+    border-bottom: 1px solid var(--accordion);
+}
+
+.accordion-wrapper ul {
+    background-color: var(--accordion);
+    padding-inline: 1.5rem;
+    margin-inline: -1.7rem;
+    gap: 1rem;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-in-out;
+}
+.accordion-wrapper ul div {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+.accordion-wrapper ul div:first-child {
+    padding-top: 1.5rem;
+}
+.accordion-wrapper ul div:last-child {
+    padding-bottom: 1.5rem;
+}
+.accordion-wrapper ul a {
+    padding-bottom: 1.5rem;
+}
+
+.accordion-wrapper.active p {
+    color: unset;
+}
+.accordion-wrapper.active ul {
+    max-height: 200px;
+}
