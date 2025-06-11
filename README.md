@@ -9,7 +9,7 @@
         <ul>
             <li>"Clear all" Button setzt alle ausgewählten Filter zurück</li>
             <li>"Save view" liest ausgewählte Filter in Konsole aus und schließt das Panel</li>
-        </li>
+        </ul>
     </li>
     <li>Suchfilter mit Textinputfeld</li>
     <li>Accordions
@@ -17,7 +17,7 @@
             <li>Klappen bei Klick Filteroptionen aus</li>
             <li>Bei mehr als 5 Optionen pro Filterkategorie erscheint "View all..." als Platzhalter</li>
             <li>Alle Optionen bei Klick auf "View All..."</li>
-        </li>
+        </ul>
     </li>
 </ul>
 
